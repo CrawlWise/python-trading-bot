@@ -6,11 +6,10 @@ from alpaca.trading.enums import OrderSide, TimeInForce
 from alpaca.trading.requests import LimitOrderRequest
 import alpaca_trade_api as tradeapi
 from alpaca_trade_api import TimeFrame, TimeFrameUnit
-
 import os
-
 import requests
 from dotenv import load_dotenv
+
 
 # Load .env files that stores the API key, API secret, and base URL
 load_dotenv()
