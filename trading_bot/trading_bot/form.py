@@ -6,11 +6,11 @@ class TradeInputForm(forms.Form):
         ('limit', 'Limit'),
         ('market', 'Market'),
         ('stop_loss', 'Stop Loss'),
-        ('stop_loss_limit', 'Stop Loss Limit'),
-        ('take_profit', 'Take Profit'),
-        ('Take_profit_limit', 'Take Profit Limit'),
-        ('Iceberg', 'Iceberg'),
-        ('Trailing_stop', 'Trailing Stop'),
+        # ('stop_loss_limit', 'Stop Loss Limit'),
+        # ('take_profit', 'Take Profit'),
+        # ('Take_profit_limit', 'Take Profit Limit'),
+        # ('Iceberg', 'Iceberg'),
+        # ('Trailing_stop', 'Trailing Stop'),
         
     )
     # buy_sell_btn = forms.BooleanField(label='Buy or Sell', required=False)

@@ -1,0 +1,212 @@
+/*==============================================================
+    General Css style settings
+==============================================================*/
+:root{
+    --grey: #f9f9f9;
+    --bg: #1f242d;
+}
+
+/*==============================================================
+    Form Input
+==============================================================*/
+
+input[type="number"] {
+    width: 5rem; /* Adjust the width as needed */
+}
+
+input[type='text'] {
+    width: 5rem; /* Adjust the width as needed */
+}
+/*==============================================================
+    Primary header
+==============================================================*/
+.header{
+    border-bottom: solid 2px white;
+}
+/*==============================================================
+    Secondary header
+==============================================================*/
+.secondary-header{
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    padding: .5rem .5rem;
+}
+
+.stock-last-price,.stock-price-changed, .stock-volume{
+    margin: 0 1rem;
+    border-radius: 10px;
+    line-height: 8px;
+    padding: .3rem .8rem .0rem .8rem;
+    color: white;
+}
+.main-container{
+    padding: 0px;
+    margin: 0px;
+    background-color: var(--bg);
+    height: 100vh;
+}
+
+.stock-item-box{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    margin: auto 5px;
+    max-width: 100%;
+  
+}
+
+.market-types{
+    border-radius: 8px;
+}
+.display-stock-chart{
+    border-radius: 8px;
+}
+
+/*==============================================================
+Order type style
+==============================================================*/
+.order-type-style {
+    display:flex;
+    justify-content: space-between;
+    background-color: var(--grey);
+    padding: .5rem;
+    border-radius: 5px;
+}
+
+.order-type-price-info{
+    display: flex;
+    flex-direction: row;
+    line-height: 8px;
+    justify-content: space-between;
+    padding: .5rem;
+    border-radius: 5px;
+    background-color: var(--grey); 
+    margin-top: 10px;
+    box-sizing: content-box;
+}
+
+.quantity_and_price{
+    padding-right: .5rem;
+}
+/*==============================================================
+Stock informatoin settings
+==============================================================*/
+
+.buy-sell-order_type-section{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: var(--grey);
+    padding: .5rem;
+    border-radius: 5px;
+}
+.buy-sell-btn{
+    display: flex;
+    flex-direction: row;
+    width: auto;
+}
+.btn-buy{
+    padding: .2rem 1rem;
+    border-radius: 8px;
+    font-weight: 500px;
+    width: 100%;
+    border: none;
+    outline: none;
+}
+.btn-buy:hover{
+    background-color: lightgreen;
+    cursor: pointer;
+}
+.btn-sell{
+    padding: 0rem 1rem;
+    border-radius: 8px;
+    font-weight: 500px;
+    width: 100%; 
+    border: none;
+    outline: none;
+}
+.btn-sell:hover{
+    background-color: lightcoral;
+    cursor: pointer;
+}
+
+.stock_price-limit-currency{
+    border-radius: 5px;
+    margin-top: 12px;;
+}
+
+.order-type-style, .stock-quantity{
+    display:flex;
+    justify-content: space-between;
+    background-color: var(--grey);
+    padding: .5rem;
+    border-radius: 5px;
+}
+
+.stock-quantity{
+    margin-top: 5px;
+}
+.stock-total-price{
+    text-align: left;
+}
+.limit-price{
+    line-height: 8px;
+}
+
+.stock-total-price{
+    text-align: center;
+}
+
+.start-trading-btn{
+    text-align: center;
+    padding: .3rem 0;
+    width: 100%;
+}
+ .start-btn{
+    border-radius: 10px;
+    padding: .3rem 1rem;
+    font-weight: 500;
+    width: 100%;
+    background-color: green;
+    color: white;
+    outline: none;
+    border: none;
+}
+
+/*============================================================
+Working with the market price drop list
+===========================================================*/
+.market-price, .stop-loss-inner{
+    display:flex;
+    justify-content: space-between;
+    background-color: var(--grey);
+    padding: .5rem;
+    border-radius: 5px;
+}
+/*============================================================
+Working with the Limit Stock value div
+===========================================================*/
+.quantity_currency_type{
+    display: flex;
+    flex-direction: row;
+}
+/*============================================================
+Working with the Stop loss div
+===========================================================*/
+.stop-trigger-field{
+    display: flex;
+    flex-direction: row;
+    line-height: .8rem;
+}
+
+.stop-trigger-stock_symbol{
+    padding-top: 1rem; 
+    margin-left: .8rem; 
+}
+/*==============================================================
+Display Stock settings
+==============================================================*/
+.display-stock-chart{
+    background-color: var(--grey)
+}
