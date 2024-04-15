@@ -1,0 +1,162 @@
+{% extends "master.html" %}
+{% block content %}
+    <div class="secondary-header">
+        <div class="stock-last-price">
+            <p>Last Price</p>
+            <p>20.998 <span>USD</span> </p>
+        </div>
+        <div class="stock-price-changed">
+            <p>2H Change</p>
+            <p>-3.0934</p>
+        </div>
+        <div class="stock-volume">
+            <p>2H volume</p>
+            <p>13.5k <span>USD</span></p>
+        </div>
+    </div>
+    <section class="row stock-item-box">
+        <!--Start: Stock limit information section-->
+        <div class=" col-md-3 market-types">
+            <div class="stock-limit" id="stock-limit-id">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="buy-sell-order_type-section">
+                        <div class="buy-sell-btn">
+                            <button class="btn-buy">Buy</button>
+                            <button class="btn-sell">Sell</button>
+                        </div>
+
+                        <div class="order-type">
+                            {{ form.limit_stop_values }}
+                        </div>
+                    </div>
+
+                    <!--START: LIMIT STOCK VALUES DIV -->
+                    <div class="stock_price-limit-currency">
+                    <div id="limit-price-stock" class="limit-market-order">
+                    <div class="limit_price-currency order-type-style">
+                        <span class="limit-price">
+                            <label for="id_name" class="form-label">Limit Price</label>
+                            <input type="Number" name="limit_price" id="id_limit_price" step="0.01" class="form-control"/>
+                        </span>
+                        <span class="currency-type">
+                            <p>EUR</p>
+                        </span>
+                    </div>
+                    <div class="order-type-price-info">
+                        <div class="quantity_currency_type">
+                            <span class="quantity_and_price">
+                                <label for="quantity" class="form-label">Quantity</label>
+                                <input type="Number" name="quantity_field" id="id_quantity_field" step="0.01" class="form-control" />    
+                            </span>
+                            <span style="margin-top: 20px">ETH</span>
+                        </div>
+                        <span class="stock-total-price">
+                            <span>
+                                <label for="total" class="form-label">Total</label>
+                                <input type="Number" name="total" id="id_total" step="0.01" class="form-control"  /> 
+                            </span>
+                        </span>
+                    </div>
+                    <div class="start-trading-btn">
+                        <button type="submit" class="start-btn">Start Trading</button>
+                    </div>
+                    </div>
+                </div>
+                </form> 
+            </div>
+            <!--END: LIMIT STOCK VALUES DIV -->
+            
+            <!--Start: Stock Market information section-->
+            <div class="stock-market" id="stock-market-id" style="display: none;">
+            <form method="post" id="market_form_submission" action="{% url 'landing' %}">
+                {% csrf_token %}
+                <div class="market-price"><!--Market Price-->
+                    <span class="flimit-price">
+                        <label for="market_price" class="form-label">Market Price</label>
+                        <input type='text' name="market_price" id="id_market_price" step="0.01" class="form-control" />
+                       <!-- <p><label for="id_name">Market Price</label></p>
+                        {{  form_market.market_price }} -->
+                    </span>
+                    <span class="currency-type">
+                        <p>EUR</p>
+                    </span>
+                </div>
+                <!--*************************************************-->
+                <div class="order-type-price-info">
+                    <div class="quantity_currency_type">
+                        <span class="quantity_and_price">
+                            <label for="quantity" class="form-label">Quantity</label>
+                            <input type="Number" name="quantity_field_market" id="id_quantity_field_market"  step="0.01" class="form-control"/>
+                        </span>
+                        <span style="margin-top: 20px">ETH</span>
+                    </div>
+                    <span class="stock-total-price">
+                        <span>
+                            <label for="total" class="form-label">Total</label>
+                            <input type="Number" name="market_total" id="id_market_total" step="0.01" class="form-control"/>
+                        </span>
+                    </span>
+                </div>
+
+            
+                <!--*************************************************-->
+                <div class="start-trading-btn">
+                    <button type="submit" class="start-btn">Start Trading</button>
+                </div>
+            </form>
+            </div>
+            <!--END: MARKET: section-->
+    
+             <!--START: STOP LOSS VALUES-->
+             <div class="stop-loss" id="stop-loss-id" style="display: none;">
+                <form method="post" action="{% url 'landing' %}">
+                    {% csrf_token %}
+                    <div class="stop-loss-inner"><!-- Stop Loss Information -->
+                        <div class="stop-trigger-field">
+                            <span class="stop-trigger-label">
+                                <label for="trigger" class="form-label">Trigger</label>
+                                <input type="number" name="triggers" id="id_trigger" step="0.01" class="form-control">
+                            </span>
+                            <span class="stop-trigger-stock-symbol">
+                                <p>EUR</p>
+                            </span>
+                            <span>
+                                <label for="distance" class="form-label">Distance</label>
+                                <input type="number" name="distance" id="id_distance" step="0.01" class="form-control">
+                            </span>
+                        </div>
+                    </div>
+            
+                    <div class="order-type-price-info">
+                        <div class="quantity_currency_type">
+                            <span class="quantity_and_price">
+                                <label for="quantity" class="form-label">Quantity</label>
+                                <input type="number" name="stop_loss_quantity" id="id_stop_loss_quantity" step="0.01" class="form-control">
+                            </span>
+                            <span style="margin-top: 20px;">ETH</span>
+                        </div>
+                        <span class="stock-total-price">
+                            <span>
+                                <label for="total" class="form-label">Total</label>
+                                <input type="number" name="stop_loss_total" id="id_stop_loss_total" step="0.01" class="form-control">
+                            </span>
+                        </span>
+                    </div>
+            
+                    <div class="start-trading-btn">
+                        <button type="submit" class="start-btn">Start Trading</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+            
+         <!--END: STOP LOSS VALUES -->
+
+        <!-- START: Display Stock Chart box-->
+        <div class="col-md-9 display-stock-chart">
+            <p>This display the chart of the stock</p>
+        </div>
+        <!-- START: Display Stock Chart box-->
+    </section>        
+{% endblock %}

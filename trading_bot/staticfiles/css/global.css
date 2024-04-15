@@ -1,0 +1,12 @@
+/*********************************************************
+      Navigation bar css styling
+*********************************************************/
+body{
+  background-color: blue;
+}
+.main-nav-bar{
+  border: solid 2px red;
+  margin-right: -10px;
+  margin-left: -10px;
+}
+
