@@ -151,15 +151,16 @@ def start_trading():
     # Get the signal
     signal = signal_generator(get_candles())
     if signal == 1:
-        print("Bullish Pattern identify. Start buying")
+        return ("Bullish Pattern identify. Start buying")
+
     elif signal == 2:
-        print("Bearish patter has been identify. Good time to buy")
+        return ("Bearish patter has been identify. Good time to buy")
     else:
-        print("Market is unstable at this time")
+        return ("Market is unstable at this time")
 
 if __name__ == "__main__":
     while True:
         start_trading()
-        time.sleep(2 * 60)
+        # time.sleep(2 * 60)
   
 # create_order_request("buy", "market", "day", "AAPL", 10)

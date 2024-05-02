@@ -1,0 +1,126 @@
+/*==============================================================
+    General Styling
+==============================================================*/
+
+a{
+    text-decoration: none;
+    color: white;
+}
+li{
+    text-decoration: none;
+    list-style-type: none;
+}
+.btn-style{
+    color: white;
+    padding: .5rem;
+    background-color: #065bf8;
+    border-radius: .8rem;
+}
+
+.btn-link{
+    border-radius: .8rem;
+    color: white;
+    background-color: #2f3540;
+    text-decoration: none;
+    border: solid 1px #4c4f54;
+
+}
+
+.contents-div{
+    height: 40vh;
+    padding: .8rem;
+}
+
+/*==============================================================
+    Portfolio Content
+==============================================================*/
+
+.portfolio-container{
+    color: white;
+}
+.top-header{
+    height: auto;
+    margin-top: 2rem;
+    margin-bottom: .8rem;
+    padding: 1rem 0;
+}
+.top-header-overview{
+    border-radius: 1rem;
+    color: white;
+    font-weight: 500px;
+    padding: .5rem;
+    background-color: #2f3540;
+}
+
+.top-header-overview a{
+    text-decoration: none;
+    color: white;
+}
+
+/*==============================================================
+    Handling the portfolio value div
+==============================================================*/
+
+.portfolio-value{
+    border-radius: 1rem;
+    padding: .8rem;
+    margin-bottom: .8rem;
+    background-color: #2f3540;
+    display: flex;
+    justify-content: space-between;
+}
+.deposit-withdrawl {
+    padding-top: .7rem;
+    
+}
+
+/*==============================================================
+    Handling Balance and Daily P&L
+==============================================================*/
+
+.btn-bal-daily{
+    border-bottom: solid 1px white;
+    padding: .8rem;
+    display: flex;
+    justify-content: space-between;
+}
+.balance-daily-profit-loss{
+    margin-bottom: .8rem;
+    background-color: #2f3540;
+    border-radius: 1rem;
+}
+.filter-list{
+    display: inline-flex;
+    background-color: #2f3540;
+} 
+.filter-list li{
+    margin: 1px;
+}
+
+.filter-balance-links {
+    background-color: #4c4f54;
+    padding: 0 .5rem;
+    
+   
+}
+
+.filter-balance-links:hover {
+    background-color: #2f3540;
+    border: solid 1px  #4c4f54;
+    color: white;
+   
+}
+.BD-display{
+    height: 40vh;
+    padding: .8rem;
+}
+
+/*==============================================================
+    Balance funding and ledger section
+==============================================================*/
+.balance-funding-ledger{
+    background-color: #2f3540;
+    border-radius: 1rem;
+    padding: .8rem;
+
+}

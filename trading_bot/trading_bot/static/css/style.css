@@ -44,7 +44,7 @@ input[type='text'] {
     padding: 0px;
     margin: 0px;
     background-color: var(--bg);
-    height: 100vh;
+    height: auto;
 }
 
 .stock-item-box{
@@ -196,17 +196,28 @@ Working with the Stop loss div
 ===========================================================*/
 .stop-trigger-field{
     display: flex;
-    flex-direction: row;
-    line-height: .8rem;
+    justify-content: space-between;
+    width: 100%;
 }
 
-.stop-trigger-stock_symbol{
-    padding-top: 1rem; 
-    margin-left: .8rem; 
+.stop-trigger-label-stock-symbol{
+    display: flex;
+    flex-direction: row;
 }
+.stop-trigger-stock-symbol{
+    padding-top: 2rem;
+    margin-left: 1rem;
+}
+
 /*==============================================================
 Display Stock settings
 ==============================================================*/
 .display-stock-chart{
     background-color: var(--grey)
+}
+
+.footer{
+    color: white;
+    text-align: center;
+    background-color: var(--bg)
 }

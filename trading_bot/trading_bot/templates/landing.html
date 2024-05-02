@@ -1,4 +1,11 @@
+
 {% extends "master.html" %}
+{% load static %}
+{% block stylesheet %} 
+<link rel='stylesheet' href="{% static 'css/style.css' %}"> 
+<link rel='stylesheet' href="{% static 'css/trade.css' %}"> 
+{% endblock %}
+
 {% block content %}
     <div class="secondary-header">
         <div class="stock-last-price">
@@ -27,7 +34,7 @@
                         </div>
 
                         <div class="order-type">
-                            {{ form.limit_stop_values }}
+                            {{ SellBuyTradeOption.limit_stop_values }}
                         </div>
                     </div>
 
@@ -114,17 +121,19 @@
                     {% csrf_token %}
                     <div class="stop-loss-inner"><!-- Stop Loss Information -->
                         <div class="stop-trigger-field">
-                            <span class="stop-trigger-label">
-                                <label for="trigger" class="form-label">Trigger</label>
-                                <input type="number" name="triggers" id="id_trigger" step="0.01" class="form-control">
-                            </span>
-                            <span class="stop-trigger-stock-symbol">
-                                <p>EUR</p>
-                            </span>
-                            <span>
+                            <div class="stop-trigger-label-stock-symbol">
+                                <span class="stop-trigger-label">
+                                    <label for="trigger" class="form-label">Trigger</label>
+                                    <input type="number" name="triggers" id="id_trigger" step="0.01" class="form-control">
+                                </span>
+                                <span class="stop-trigger-stock-symbol">
+                                    <p>EUR</p>
+                                </span>
+                            </div>
+                            <div class='distance-label'>
                                 <label for="distance" class="form-label">Distance</label>
                                 <input type="number" name="distance" id="id_distance" step="0.01" class="form-control">
-                            </span>
+                            </div>
                         </div>
                     </div>
             
@@ -148,6 +157,8 @@
                         <button type="submit" class="start-btn">Start Trading</button>
                     </div>
                 </form>
+
+                {{ app }}
             </div>
         </div>
             
@@ -155,7 +166,38 @@
 
         <!-- START: Display Stock Chart box-->
         <div class="col-md-9 display-stock-chart">
-            <p>This display the chart of the stock</p>
+            <!-- Before Buying my stock, in need to know the quantity, Open, Close -->
+            <div class="stock-info-to-buy">
+                {{appcd }}
+                <table class="table table-striped">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Stock Name</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Open</th>
+                            <th scope="col">Close</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td><input type="text" id="id_stock_name" name="stock_name" value="TSLA"/></td>
+                            <td><input type="number" id="id_stock_quantity" name="stock_quantity"value=99 step="0.1"/></td>
+                            <td><input type="number" id="id_stock_open" name="stock_open" value=456.67 step="0.1"/></td>
+                            <td><input type="number" id="id_stock_close" name="stock_close" value=345.67 step="0.1"/></td>
+                            <td>
+                                    <button type="submit">Buy</button>
+                                    <button type="submit">Sell</button>
+                            </td>
+                    </form>    
+                          </table>  
+                        </td>
+                      </tr>
+                    </tbody>               
+            </div>
         </div>
         <!-- START: Display Stock Chart box-->
     </section>        

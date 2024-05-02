@@ -1,0 +1,111 @@
+{% extends "master.html" %}
+{% load static %}
+{% block stylesheet %}
+<link rel='stylesheet' href="{% static 'css/portfolio.css' %}">
+<link rel='stylesheet' href="{% static 'css/style.css' %}">
+{% endblock %}
+{% block content %}
+<section class="container portfolio-container">
+    <div class="top-header">
+        <span class="top-header-overview"><a href="#">Overview</a></span>
+    </div>
+    <section class="portfolio-value">
+        <div class="portfolioValue">
+           <h6>Portfolio Value</h6>
+            <h4>209.00USD</h4>
+        </div>
+        <div class="deposit-withdrawl">
+            <button class='btn-style btn btn-primary'>Deposite</button>
+            <button class='btn btn-primary btn-style'>Withdraw</button>
+        </div>
+    </section>
+
+    <section class="balance-daily-profit-loss">
+        <div class="btn-bal-daily">
+            <span class="bal-daily">
+                <form>
+                    <button class="btn-link">Balance</button>
+                    <button class="btn-link">Daily P&L</button>
+                </form>
+            </span>
+
+            <span class='filter-balance'>
+                <ul class="filter-list">
+                    <a href="" class="filter-balance-links"><li>7D</li></a>
+                    <a href="" class="filter-balance-links"><li>1M</li></a>
+                    <a href="" class="filter-balance-links"><li>3M</li></a>
+                    <a href="" class="filter-balance-links"><li>6M</li></a>
+                    <a href="" class="filter-balance-links"><li>1Y</li></a>
+                    <a href="" class="filter-balance-links"><li>All</li></a>
+
+                </ul>
+            </span>
+        </div>
+       <div class="BD-display">
+           <div class="balance">
+               Show balance content field
+           </div>
+           <div class="profit-loss">
+               show profit loss content field
+           </div>
+       </div>
+    </section>
+
+    {% comment %} <section class="spot">
+        <div class="spot-secton">
+            <h5>Spot</h5>
+            <h1>209.00USD</h1>
+        </div>
+    </section> {% endcomment %}
+
+    <section class="balance-funding-ledger">
+        <div class="balance-funding-ledger-nav">
+            <form>
+                <button class="btn-link">Balances</button>
+                <button class="btn-link">Funding</button>
+                <button class="btn-link">Ledger</button>
+            </form>
+        </div>
+        <div class="balance-content contents-div">
+            <div class="balance-table">
+                <table class="table" style="color: white;">
+                    <thead>
+                      <tr>
+                        <th scope="col">Asset</th>
+                        <th scope="col">Tickers</th>
+                        <th scope="col">Alloation</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Balance</th>
+                        <th scope="col">Estimated Value</th>
+                        <th scope="col">Available Balance</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Tesla</td>
+                        <td>TSLD</td>
+                        <td>72.20</td>
+                        <td>0.000</td>
+                        <td>0.48</td>
+                        <td>4,531.00</td>
+                        <td>1,456.00</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+            <div class="balance-asset">
+                <p> balance here</p>
+            </div>
+        </div>
+
+        <!--<div class="funding-transaction">
+            funding transaction goes in here
+        </div>
+
+        <div class="ledger">
+            ledger balance goes in here
+        </div> -->
+       
+    </section>
+</section>
+{% endblock %}
