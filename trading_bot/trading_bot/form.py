@@ -40,3 +40,8 @@ class StocksTable(forms.Form):
     stock_quantity = forms.DecimalField(decimal_places=2)
     stock_open = forms.DecimalField(decimal_places=2)
     stock_close = forms.DecimalField(decimal_places=2)
+
+
+class Filters(forms.Form):
+    start_date = forms.DateTimeField()
+    end_date = forms.DateTimeField()
