@@ -49,14 +49,14 @@ def landing(request):
 
         if stock_table.is_valid():
             get_stock_name = stock_table.cleaned_data.get('stock_name')
-            get_stock_quantity = stock_table.cleaned_data.get('stock_quanntity')
+            get_stock_quantity = stock_table.cleaned_data.get('stock_quantity')
             get_stock_open = stock_table.cleaned_data.get('stock_open')
             get_stock_close = stock_table.cleaned_data.get('stock_close')
 
-            print(get_stock_close)
-            print(get_stock_quantity)
             print(get_stock_name)
+            print(get_stock_quantity)
             print(get_stock_open)
+            print(get_stock_close)
 
         if filters_option.is_valid():
             get_start_date = filters_option.cleaned_data.get('start_date')
@@ -64,6 +64,9 @@ def landing(request):
 
             print(get_start_date)
             print(get_end_date)
+            
+    # Setting up the app to buy get all stocks in the Alpaca platform
+    
 
     return render(request, 'landing.html', {
         'form': form,
