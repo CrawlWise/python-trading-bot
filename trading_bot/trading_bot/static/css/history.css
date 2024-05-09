@@ -1,0 +1,34 @@
+a{
+    color: white;
+    text-decoration: none
+}
+
+li{
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.history-container{
+    color: white;
+    min-height: 90vh;
+}
+
+.filter-list{
+    display: inline-flex;
+    margin-top: .8rem;
+    padding-left: .8rem;
+}
+.filter-list li{
+    padding: .8rem;
+    text-align: center;
+}
+
+.filter-list li:hover{
+    background-color: #2f3540;
+    border-radius: 1rem;
+    color: white;
+}
+
+.history-content{
+    padding:0 .8rem;
+}

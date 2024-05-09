@@ -1,2 +1,51 @@
 {% extends 'master.html' %}
-<p>This is the history page</p>
+{% load static %}
+{% block stylesheet %} 
+<link rel='stylesheet' href="{% static 'css/style.css' %}"> 
+<link rel='stylesheet' href="{% static 'css/history.css' %}"> 
+{% endblock %}
+
+{% block content %}
+<section class="history-container">
+    <div class="history-nav"></div>
+    <section class="history-display-content">
+        <div class="filters">
+            <ul  class="filter-list">
+                <a href="" class="filter-balance-links"><li>Ledger</li></a>
+                <a href="" class="filter-balance-links"><li>Closed Orders</li></a>
+                <a href="" class="filter-balance-links"><li>Trades</li></a>
+                <a href="" class="filter-balance-links"><li>Export</li></a>
+            </ul>
+        </div>
+
+        <div class="history-content">
+            <table class="table table-responsive" style="color: white;">
+                    <thead>
+                      <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Closed</th>
+                        <th scope="col">SIDE</th>
+                        <th scope="col">TYPE</th>
+                        <th scope="col">STATUS</th>
+                        <th scope="col">AVERAGE PRICE</th>
+                        <th scope="col">QUANTITY EXECUTED</th>
+                        <th scope="col">COST</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>0001</td>
+                        <td>4/4/2020</td>
+                        <td>BUY</td>
+                        <td>Market</td>
+                        <td>Filled</td>
+                        <td>0.00000</td>
+                        <td>1.09</td>
+                        <td>45.09</td>
+                      </tr>
+                    </tbody>
+                  </table>
+        </div>
+    </section>
+</section>
+{% endblock %}

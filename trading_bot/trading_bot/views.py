@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .form import TradeInputForm, TradeMarketForm, TradeStopLossForm, BtnSellBuyTradeOption, StocksTable
+from .form import TradeInputForm, TradeMarketForm, TradeStopLossForm, BtnSellBuyTradeOption, StocksTable, Filters
 from . import app
 
 
@@ -11,6 +11,7 @@ def landing(request):
     form_market = TradeMarketForm(request.POST or None)
     form = TradeInputForm(request.POST or None)
     stock_table = StocksTable(request.POST or None)
+    filters_option = Filters(request.POST or None)
 
     # Initialize limit_options with a default value
     limit_options = None  # Or use any appropriate default value
@@ -56,6 +57,13 @@ def landing(request):
             print(get_stock_quantity)
             print(get_stock_name)
             print(get_stock_open)
+
+        if filters_option.is_valid():
+            get_start_date = filters_option.cleaned_data.get('start_date')
+            get_end_date = filters_option.cleaned_data.get('end_date')
+
+            print(get_start_date)
+            print(get_end_date)
 
     return render(request, 'landing.html', {
         'form': form,
